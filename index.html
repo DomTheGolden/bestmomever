@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Official Funding Request</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:linear-gradient(135deg,#4facfe,#00f2fe);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.card{
+    background:white;
+    width:700px;
+    max-width:90%;
+    border-radius:15px;
+    padding:40px;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+h1{
+    text-align:center;
+    color:#2c3e50;
+    margin-bottom:5px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#666;
+    margin-bottom:30px;
+}
+
+.section{
+    margin:20px 0;
+}
+
+.progress{
+    background:#ddd;
+    border-radius:20px;
+    overflow:hidden;
+    height:28px;
+}
+
+.progress-bar{
+    width:0%;
+    height:100%;
+    background:#27ae60;
+    animation:fill 2s forwards;
+}
+
+@keyframes fill{
+    to{width:100%;}
+}
+
+.amount{
+    text-align:center;
+    font-size:42px;
+    color:#27ae60;
+    font-weight:bold;
+    margin:20px 0;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    font-size:18px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    background:#3498db;
+    color:white;
+    transition:.3s;
+}
+
+button:hover{
+    background:#2980b9;
+}
+
+.footer{
+    text-align:center;
+    margin-top:25px;
+    color:#777;
+    font-size:14px;
+}
+
+.approved{
+    display:none;
+    text-align:center;
+    margin-top:20px;
+    color:#27ae60;
+    font-size:22px;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>💰 Official Funding Request 💰</h1>
+<div class="subtitle">
+Submitted to: <strong>Mom</strong><br>
+Applicant: <strong>Your Favorite Child</strong>
+</div>
+
+<div class="section">
+<h2>Request Amount</h2>
+<div class="amount">$10.00</div>
+</div>
+
+<div class="section">
+<h2>Reason for Funding</h2>
+<p>
+After extensive financial analysis, it has been determined that an
+investment of <strong>$10</strong> would significantly improve today's
+quality of life. This funding may be used for snacks, drinks,
+gaming, or another extremely important purpose.
+</p>
+</div>
+
+<div class="section">
+<h2>Benefits to the Investor (Mom)</h2>
+
+<ul>
+<li>✔ Happiness increases by approximately 87%</li>
+<li>✔ Applicant will say "Thank you!"</li>
+<li>✔ Unlimited appreciation*</li>
+<li>✔ Possibility of an extra chore (negotiable)</li>
+</ul>
+
+<small>*Terms and conditions may apply.</small>
+</div>
+
+<div class="section">
+<h2>Funding Goal</h2>
+
+<div class="progress">
+<div class="progress-bar"></div>
+</div>
+
+<p style="text-align:center;">$0 / $10 Raised</p>
+
+</div>
+
+<button onclick="approve()">
+Approve Funding 💸
+</button>
+
+<div class="approved" id="approved">
+🎉 Thank you Mom! Your generosity will be remembered forever.
+</div>
+
+<div class="footer">
+This proposal has been reviewed by the Department of Being Broke.<br>
+Approval is greatly appreciated.
+</div>
+
+</div>
+
+<script>
+function approve(){
+    document.getElementById("approved").style.display="block";
+}
+</script>
+
+</body>
+</html>
