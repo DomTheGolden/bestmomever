@@ -3,171 +3,136 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Official Funding Request</title>
+<title>Operation: Mom Please?</title>
 
 <style>
 body{
     margin:0;
     font-family:Arial,Helvetica,sans-serif;
-    background:linear-gradient(135deg,#4facfe,#00f2fe);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fad390);
+    color:#222;
+    text-align:center;
+    overflow-x:hidden;
+}
+
+.container{
+    max-width:800px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+h1{
+    font-size:60px;
+    animation:bounce 1s infinite alternate;
 }
 
 .card{
     background:white;
-    width:700px;
-    max-width:90%;
-    border-radius:15px;
-    padding:40px;
-    box-shadow:0 15px 35px rgba(0,0,0,.25);
-}
-
-h1{
-    text-align:center;
-    color:#2c3e50;
-    margin-bottom:5px;
-}
-
-.subtitle{
-    text-align:center;
-    color:#666;
-    margin-bottom:30px;
-}
-
-.section{
-    margin:20px 0;
-}
-
-.progress{
-    background:#ddd;
     border-radius:20px;
-    overflow:hidden;
-    height:28px;
-}
-
-.progress-bar{
-    width:0%;
-    height:100%;
-    background:#27ae60;
-    animation:fill 2s forwards;
-}
-
-@keyframes fill{
-    to{width:100%;}
-}
-
-.amount{
-    text-align:center;
-    font-size:42px;
-    color:#27ae60;
-    font-weight:bold;
-    margin:20px 0;
+    padding:30px;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+    margin-top:30px;
 }
 
 button{
-    width:100%;
-    padding:15px;
-    font-size:18px;
+    padding:20px 50px;
+    font-size:24px;
     border:none;
-    border-radius:10px;
+    border-radius:15px;
     cursor:pointer;
-    background:#3498db;
+    background:#4CAF50;
     color:white;
     transition:.3s;
 }
 
 button:hover{
-    background:#2980b9;
+    transform:scale(1.08);
+    background:#3fa245;
 }
 
-.footer{
-    text-align:center;
+#message{
     margin-top:25px;
-    color:#777;
-    font-size:14px;
+    font-size:28px;
+    font-weight:bold;
+    color:#ff4081;
 }
 
-.approved{
-    display:none;
-    text-align:center;
-    margin-top:20px;
-    color:#27ae60;
+marquee{
     font-size:22px;
-    font-weight:bold;
+    background:#222;
+    color:white;
+    padding:10px;
+}
+
+@keyframes bounce{
+    from{transform:translateY(0);}
+    to{transform:translateY(-10px);}
 }
 </style>
 </head>
 
 <body>
 
+<marquee>
+🚨 Official Family Funding Request 🚨 No wallets were harmed in the making of this webpage 🚨
+</marquee>
+
+<div class="container">
+
+<h1>🙏 Mom... Hear Me Out 🙏</h1>
+
 <div class="card">
 
-<h1>💰 Official Funding Request 💰</h1>
-<div class="subtitle">
-Submitted to: <strong>Mom</strong><br>
-Applicant: <strong>Your Favorite Child</strong>
-</div>
+<h2>I Come Bearing a Proposal</h2>
 
-<div class="section">
-<h2>Request Amount</h2>
-<div class="amount">$10.00</div>
-</div>
-
-<div class="section">
-<h2>Reason for Funding</h2>
 <p>
-After extensive financial analysis, it has been determined that an
-investment of <strong>$10</strong> would significantly improve today's
-quality of life. This funding may be used for snacks, drinks,
-gaming, or another extremely important purpose.
+I would like to request that you order something for me.
 </p>
-</div>
 
-<div class="section">
-<h2>Benefits to the Investor (Mom)</h2>
+<p>
+✔️ I will pay you back.
+</p>
 
-<ul>
-<li>✔ Happiness increases by approximately 87%</li>
-<li>✔ Applicant will say "Thank you!"</li>
-<li>✔ Unlimited appreciation*</li>
-<li>✔ Possibility of an extra chore (negotiable)</li>
-</ul>
+<p>
+✔️ This is a professionally engineered negotiation website.
+</p>
 
-<small>*Terms and conditions may apply.</small>
-</div>
+<p>
+✔️ I even made an entire webpage instead of just asking normally.
+</p>
 
-<div class="section">
-<h2>Funding Goal</h2>
+<h2>Reasons You Should Say Yes</h2>
 
-<div class="progress">
-<div class="progress-bar"></div>
-</div>
-
-<p style="text-align:center;">$0 / $10 Raised</p>
-
-</div>
+<p>😂 Because this website exists.</p>
+<p>💰 You're getting your money back.</p>
+<p>🏆 I get to be ridiculously happy.</p>
 
 <button onclick="approve()">
-Approve Funding 💸
+Approve Request
 </button>
 
-<div class="approved" id="approved">
-🎉 Thank you Mom! Your generosity will be remembered forever.
-</div>
+<div id="message"></div>
 
-<div class="footer">
-This proposal has been reviewed by the Department of Being Broke.<br>
-Approval is greatly appreciated.
 </div>
 
 </div>
 
 <script>
+const messages = [
+"🎉 Excellent choice! Future Me says thank you!",
+"🥳 Mom has unlocked the 'Best Mom Ever' achievement!",
+"💰 Payment will be made as promised!",
+"⭐ Happiness level increased by 9000!",
+"🚀 This negotiation has been declared a complete success!",
+"😂 The lawyers agree this webpage was very convincing."
+];
+
 function approve(){
-    document.getElementById("approved").style.display="block";
+    document.getElementById("message").innerHTML =
+        messages[Math.floor(Math.random()*messages.length)];
+
+    document.body.style.background =
+        "linear-gradient(135deg,#84fab0,#8fd3f4)";
 }
 </script>
 
